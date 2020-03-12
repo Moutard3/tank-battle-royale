@@ -66,6 +66,7 @@ func _on_game_ended() -> void:
 func refresh_lobby() -> void:
 	var players = gamestate.get_player_list()
 	players.sort()
+	get_node("Panel/VBoxContainer/Game/HBoxContainer/VBoxContainer/ItemList").clear()
 	get_node("Panel/VBoxContainer/Game/HBoxContainer/VBoxContainer/ItemList").add_item(gamestate.get_player_name() + " (You)")
 	for p in players:
 		get_node("Panel/VBoxContainer/Game/HBoxContainer/VBoxContainer/ItemList").add_item(p)

@@ -8,7 +8,7 @@ extends Node
 const DEFAULT_PORT: int = 10567
 
 # Max number of players
-const MAX_PEERS: int = 2
+const MAX_PEERS: int = 10
 
 # Name for my player
 var player_name: String = "Good Name"
