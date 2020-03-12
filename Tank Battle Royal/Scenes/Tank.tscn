@@ -17,38 +17,55 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 15.2549, 15.1427 )
 
-[node name="Tank" type="KinematicBody2D" groups=[
+[node name="Player" type="Node2D"]
+position = Vector2( 7.75414, 5.16942 )
+
+[node name="NomJoueur" type="Label" parent="."]
+margin_left = 466.232
+margin_top = 210.079
+margin_right = 502.232
+margin_bottom = 224.079
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Tank"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tank" type="KinematicBody2D" parent="." groups=[
 "Player",
 ]]
-position = Vector2( 510.586, 295.279 )
+position = Vector2( 502.83, 294.171 )
 scale = Vector2( 3, 3 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="Tank"]
 
-[node name="BodyTank" type="AnimatedSprite" parent="."]
+[node name="BodyTank" type="AnimatedSprite" parent="Tank"]
 rotation = -1.5708
 scale = Vector2( 0.141693, 0.141693 )
 frames = SubResource( 1 )
 
-[node name="Turret" type="KinematicBody2D" parent="."]
+[node name="Turret" type="KinematicBody2D" parent="Tank"]
 position = Vector2( -2.51572, -0.432399 )
 rotation = -1.5708
 
-[node name="TurretSprite" type="Sprite" parent="Turret"]
+[node name="TurretSprite" type="Sprite" parent="Tank/Turret"]
 position = Vector2( -0.0394897, 5.38074 )
 scale = Vector2( 0.148148, 0.148148 )
 texture = ExtResource( 7 )
 
-[node name="PositionShoot" type="Position2D" parent="Turret/TurretSprite"]
+[node name="PositionShoot" type="Position2D" parent="Tank/Turret/TurretSprite"]
 position = Vector2( 0, 130.237 )
 rotation = 6.8212e-13
 scale = Vector2( 6.75001, 6.75001 )
 
-[node name="CollisionTank" type="CollisionShape2D" parent="."]
+[node name="CollisionTank" type="CollisionShape2D" parent="Tank"]
 position = Vector2( -0.0936127, 0.0657351 )
 shape = SubResource( 2 )
 __meta__ = {

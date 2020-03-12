@@ -1,15 +1,21 @@
-E:\The_game_test\p_1\Tank Challenge\.mono\temp\bin\Debug\Tank Challenge.dll
-E:\The_game_test\p_1\Tank Challenge\.mono\temp\bin\Debug\Tank Challenge.pdb
-E:\The_game_test\p_1\Tank Challenge\.mono\temp\obj\Debug\Tank Challenge.csprojAssemblyReference.cache
-E:\The_game_test\p_1\Tank Challenge\.mono\temp\obj\Debug\Tank Challenge.dll
-E:\The_game_test\p_1\Tank Challenge\.mono\temp\obj\Debug\Tank Challenge.pdb
-E:\Tank_Battle_Royal\copie_0603\Tank Battle Royal\.mono\temp\bin\Debug\Tank Challenge.dll
-E:\Tank_Battle_Royal\copie_0603\Tank Battle Royal\.mono\temp\bin\Debug\Tank Challenge.pdb
-E:\Tank_Battle_Royal\copie_0603\Tank Battle Royal\.mono\temp\obj\Debug\Tank Challenge.csprojAssemblyReference.cache
-E:\Tank_Battle_Royal\copie_0603\Tank Battle Royal\.mono\temp\obj\Debug\Tank Challenge.dll
-E:\Tank_Battle_Royal\copie_0603\Tank Battle Royal\.mono\temp\obj\Debug\Tank Challenge.pdb
-E:\Tank_Battle_Royal\tank-battle-royale-master\Tank Battle Royal\.mono\temp\bin\Debug\Tank Challenge.dll
-E:\Tank_Battle_Royal\tank-battle-royale-master\Tank Battle Royal\.mono\temp\bin\Debug\Tank Challenge.pdb
-E:\Tank_Battle_Royal\tank-battle-royale-master\Tank Battle Royal\.mono\temp\obj\Debug\Tank Challenge.csprojAssemblyReference.cache
-E:\Tank_Battle_Royal\tank-battle-royale-master\Tank Battle Royal\.mono\temp\obj\Debug\Tank Challenge.dll
-E:\Tank_Battle_Royal\tank-battle-royale-master\Tank Battle Royal\.mono\temp\obj\Debug\Tank Challenge.pdb
+E:/The_game_test/p_1/Tank Challenge/.mono/temp/bin/Debug/Tank Challenge.dll
+E:/The_game_test/p_1/Tank Challenge/.mono/temp/bin/Debug/Tank Challenge.pdb
+E:/The_game_test/p_1/Tank Challenge/.mono/temp/obj/Debug/Tank Challenge.csprojAssemblyReference.cache
+E:/The_game_test/p_1/Tank Challenge/.mono/temp/obj/Debug/Tank Challenge.dll
+E:/The_game_test/p_1/Tank Challenge/.mono/temp/obj/Debug/Tank Challenge.pdb
+E:/Tank_Battle_Royal/copie_0603/Tank Battle Royal/.mono/temp/bin/Debug/Tank Challenge.dll
+E:/Tank_Battle_Royal/copie_0603/Tank Battle Royal/.mono/temp/bin/Debug/Tank Challenge.pdb
+E:/Tank_Battle_Royal/copie_0603/Tank Battle Royal/.mono/temp/obj/Debug/Tank Challenge.csprojAssemblyReference.cache
+E:/Tank_Battle_Royal/copie_0603/Tank Battle Royal/.mono/temp/obj/Debug/Tank Challenge.dll
+E:/Tank_Battle_Royal/copie_0603/Tank Battle Royal/.mono/temp/obj/Debug/Tank Challenge.pdb
+E:/Tank_Battle_Royal/tank-battle-royale-master/Tank Battle Royal/.mono/temp/bin/Debug/Tank Challenge.dll
+E:/Tank_Battle_Royal/tank-battle-royale-master/Tank Battle Royal/.mono/temp/bin/Debug/Tank Challenge.pdb
+E:/Tank_Battle_Royal/tank-battle-royale-master/Tank Battle Royal/.mono/temp/obj/Debug/Tank Challenge.csprojAssemblyReference.cache
+E:/Tank_Battle_Royal/tank-battle-royale-master/Tank Battle Royal/.mono/temp/obj/Debug/Tank Challenge.dll
+E:/Tank_Battle_Royal/tank-battle-royale-master/Tank Battle Royal/.mono/temp/obj/Debug/Tank Challenge.pdb
+/home/alexandre/Godot/tank-battle-royale/Tank Battle Royal/.mono/temp/bin/Debug/Tank Challenge.dll
+/home/alexandre/Godot/tank-battle-royale/Tank Battle Royal/.mono/temp/bin/Debug/Tank Challenge.pdb
+/home/alexandre/Godot/tank-battle-royale/Tank Battle Royal/.mono/temp/obj/Debug/Tank Challenge.csprojAssemblyReference.cache
+/home/alexandre/Godot/tank-battle-royale/Tank Battle Royal/.mono/temp/obj/Debug/Tank Challenge.csproj.CoreCompileInputs.cache
+/home/alexandre/Godot/tank-battle-royale/Tank Battle Royal/.mono/temp/obj/Debug/Tank Challenge.dll
+/home/alexandre/Godot/tank-battle-royale/Tank Battle Royal/.mono/temp/obj/Debug/Tank Challenge.pdb

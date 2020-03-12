@@ -1,6 +1,5 @@
 extends Control
 
-
 onready var _host_btn = $Panel/VBoxContainer/HBoxContainer2/HBoxContainer/Host
 onready var _connect_btn = $Panel/VBoxContainer/HBoxContainer2/HBoxContainer/Connect
 onready var _disconnect_btn = $Panel/VBoxContainer/HBoxContainer2/HBoxContainer/Disconnect
@@ -72,8 +71,6 @@ func refresh_lobby() -> void:
 		get_node("Panel/VBoxContainer/Game/HBoxContainer/VBoxContainer/ItemList").add_item(p)
 
 	get_node("Panel/VBoxContainer/Game/HBoxContainer/VBoxContainer/Action").disabled=not get_tree().is_network_server()
-
-	
 
 func _on_start_pressed() -> void:
 	gamestate.begin_game()

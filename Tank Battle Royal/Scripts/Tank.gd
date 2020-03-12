@@ -3,6 +3,7 @@ class_name Tank
 
 var _id : int
 var _life : int = 100
+export var player_name = "Nom du joueur"
 
 var _bodyRotation : float = 0.0
 var _turretRotation : float = 0.0;
@@ -76,6 +77,7 @@ func _ready() -> void:
 	self._turretNode = get_node("Turret")
 	self._positionShootNode = get_node("Turret/TurretSprite/PositionShoot")
 	self.connect("damage_taken", self, "_on_damage_taken")
+	get_node("../NomJoueur").text = self.player_name
 	
 	if (is_network_master()):
 		get_node("Camera2D").current = true
@@ -100,6 +102,7 @@ func _physics_process(delta) -> void:
 		(_bodyRotation * _bodyRotationSpeed * delta)
 	)
 	_turretNode.rotation += _turretRotation * _turretRotationSpeed * delta
+	get_node("../NomJoueur").rect_global_position = global_position + Vector2(0, -70) - get_node("../NomJoueur").get_rect().size
 
 func _on_damage_taken(damage : int) -> void:
 	self._life -= damage
@@ -113,8 +116,8 @@ remotesync func destroy_tank(id : int) -> void:
 
 remotesync func createBullet(id:int) -> void:
 	var bullet = preload("res://Scenes/Bullet_Tank.tscn").instance()
-	bullet.position = get_node("/root/Game/Tank_"+str(id)).getPositionShootNode().global_position
-	bullet.rotation_degrees = get_node("/root/Game/Tank_"+str(id)).getTurretNode().global_rotation_degrees
+	bullet.position = get_node("/root/Game/Player/Tank_"+str(id)).getPositionShootNode().global_position
+	bullet.rotation_degrees = get_node("/root/Game/Player/Tank_"+str(id)).getTurretNode().global_rotation_degrees
 	get_parent().add_child(bullet)
 
 func shoot():

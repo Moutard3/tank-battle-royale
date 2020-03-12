@@ -9,14 +9,18 @@ remote func start_game(spawn_points: Dictionary):
 	get_tree().get_root().add_child(gameInstance)
 	var player = preload("res://Scenes/Tank.tscn")
 	
+	players[1] = "Host"
+	
 	for p_id in spawn_points:
-		var tank = player.instance()
+		var playerInstance = player.instance()
+		var tank = playerInstance.get_node("Tank")
 		tank.name = "player "+str(p_id)
 		tank.position = get_tree().get_root().get_node("Game").get_node("Spawn"+str(spawn_points[p_id])).position
 		tank.setId(p_id)
+		tank.player_name = players[p_id]
 		tank.set_name("Tank_"+str(p_id))
 		tank.set_network_master(p_id)
-		get_tree().get_root().get_node("Game").add_child(tank)
+		get_tree().get_root().get_node("Game").add_child(playerInstance)
 
 sync func _log(what):
 	$HBoxContainer/RichTextLabel.add_text(what + "\n")

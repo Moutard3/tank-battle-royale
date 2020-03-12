@@ -84,20 +84,6 @@ remote func unregister_player(id: int) -> void:
 remote func post_start_game() -> void:
 	get_tree().set_pause(false) # Unpause and unleash the game!
 
-var players_ready: = []
-
-
-remote func ready_to_start(id: int) -> void:
-	assert(get_tree().is_network_server())
-
-	if not id in players_ready:
-		players_ready.append(id)
-
-	if players_ready.size() == players.size():
-		for p in players:
-			rpc_id(p, "post_start_game")
-		post_start_game()
-
 func get_players()-> Dictionary:
 	return players
 	
