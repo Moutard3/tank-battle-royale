@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Sprites/BlueTank/blueTank2.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Tank.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sprites/BlueTank/blueTank1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/BlueTank/blueTank0.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/BlueTank/Turret.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 15.2549, 15.1427 )
+
+[node name="Tank" type="KinematicBody2D" groups=[
+"Player",
+]]
+position = Vector2( 510.586, 295.279 )
+scale = Vector2( 3, 3 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="BodyTank" type="AnimatedSprite" parent="."]
+rotation = -1.5708
+scale = Vector2( 0.141693, 0.141693 )
+frames = SubResource( 1 )
+
+[node name="Turret" type="KinematicBody2D" parent="."]
+position = Vector2( -2.51572, -0.432399 )
+rotation = -1.5708
+
+[node name="TurretSprite" type="Sprite" parent="Turret"]
+position = Vector2( -0.0394897, 5.38074 )
+scale = Vector2( 0.148148, 0.148148 )
+texture = ExtResource( 7 )
+
+[node name="PositionShoot" type="Position2D" parent="Turret/TurretSprite"]
+position = Vector2( 0, 130.237 )
+rotation = 6.8212e-13
+scale = Vector2( 6.75001, 6.75001 )
+
+[node name="CollisionTank" type="CollisionShape2D" parent="."]
+position = Vector2( -0.0936127, 0.0657351 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
