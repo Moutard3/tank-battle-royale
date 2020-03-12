@@ -4,12 +4,12 @@ const _crown = preload("res://img/crown.png")
 
 remote func start_game(spawn_points: Dictionary):
 	var players = gamestate.get_players();
-	var game = preload("res://Scenes/Game.tscn")
+	var game = load("res://Scenes/Game.tscn")
 	var gameInstance = game.instance()
 	get_tree().get_root().add_child(gameInstance)
 	var player = preload("res://Scenes/Tank.tscn")
 	
-	players[get_tree().get_network_unique_id()] = "Moi"
+	players[get_tree().get_network_unique_id()] = ""
 	
 	for p_id in spawn_points:
 		var playerInstance = player.instance()
