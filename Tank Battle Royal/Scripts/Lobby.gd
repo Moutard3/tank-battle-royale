@@ -38,14 +38,13 @@ func _on_Connect_pressed() -> void:
 		return
 
 	var ip = _host_edit.text
-	if not ip.is_valid_ip_address():
-		get_node("Panel/VBoxContainer/Game/HBoxContainer/RichTextLabel").text="Invalid IPv4 address!"
-		return
 
 	get_node("Panel/VBoxContainer/Game/HBoxContainer/RichTextLabel").text=""
 	_host_edit.editable = false
 	_connect_btn.hide()
+	_host_btn.disabled = true
 	_disconnect_btn.show()
+	_name_edit.editable = false
 	var player_name = _name_edit.text
 	gamestate.join_game(ip, player_name)
 	# refresh_lobby() gets called by the player_list_changed signal
@@ -59,9 +58,23 @@ func _on_connection_failed() -> void:
 	_host_btn.disabled=false
 	_connect_btn.disabled=false
 
+func _on_Disconnect_pressed() -> void:
+	if get_tree().is_network_server():
+		get_tree().emit_signal("server_disconnected")
+	gamestate.end_game()
+	get_node("Panel/VBoxContainer/Game/HBoxContainer/VBoxContainer/ItemList").clear()
 
 func _on_game_ended() -> void:
 	show()
+	_disconnect_btn.hide()
+	_connect_btn.show()
+	_host_btn.disabled = false
+	_host_edit.editable = true
+	_name_edit.editable = true
+	get_node("Panel/VBoxContainer/Game/HBoxContainer/VBoxContainer/ItemList").clear()
+
+func _on_game_error() -> void:
+	gamestate.end_game()
 
 func refresh_lobby() -> void:
 	var players = gamestate.get_player_list()
