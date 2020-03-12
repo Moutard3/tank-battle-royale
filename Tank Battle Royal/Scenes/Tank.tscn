@@ -61,7 +61,7 @@ scale = Vector2( 0.148148, 0.148148 )
 texture = ExtResource( 7 )
 
 [node name="PositionShoot" type="Position2D" parent="Tank/Turret/TurretSprite"]
-position = Vector2( 0, 130.237 )
+position = Vector2( 0, 200 )
 rotation = 6.8212e-13
 scale = Vector2( 6.75001, 6.75001 )
 

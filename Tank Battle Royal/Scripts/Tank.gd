@@ -105,11 +105,12 @@ func _physics_process(delta) -> void:
 	get_node("../NomJoueur").rect_global_position = global_position + Vector2(0, -70) - get_node("../NomJoueur").get_rect().size
 
 func _on_damage_taken(damage : int) -> void:
-	self._life -= damage
-	if (self._life <= 0):
-		get_node("Camera2D").current = false
-		get_node("/root/Game/Camera2D").current = true
-		rpc("destroy_tank", self.getId())
+	if (is_network_master()):
+		self._life -= damage
+		if (self._life <= 0):
+			get_node("Camera2D").current = false
+			get_node("/root/Game/Camera2D").current = true
+			rpc("destroy_tank", self.getId())
 
 remotesync func destroy_tank(id : int) -> void:
 	get_node("/root/Game/Player_"+str(id)+"/Tank").queue_free()
