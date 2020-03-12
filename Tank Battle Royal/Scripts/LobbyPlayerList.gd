@@ -9,16 +9,15 @@ remote func start_game(spawn_points: Dictionary):
 	get_tree().get_root().add_child(gameInstance)
 	var player = preload("res://Scenes/Tank.tscn")
 	
-	players[1] = "Host"
+	players[get_tree().get_network_unique_id()] = "Moi"
 	
 	for p_id in spawn_points:
 		var playerInstance = player.instance()
+		playerInstance.set_name("Player_"+str(p_id))
 		var tank = playerInstance.get_node("Tank")
-		tank.name = "player "+str(p_id)
 		tank.position = get_tree().get_root().get_node("Game").get_node("Spawn"+str(spawn_points[p_id])).position
 		tank.setId(p_id)
 		tank.player_name = players[p_id]
-		tank.set_name("Tank_"+str(p_id))
 		tank.set_network_master(p_id)
 		get_tree().get_root().get_node("Game").add_child(playerInstance)
 

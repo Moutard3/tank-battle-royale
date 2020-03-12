@@ -112,12 +112,12 @@ func _on_damage_taken(damage : int) -> void:
 		rpc("destroy_tank", self.getId())
 
 remotesync func destroy_tank(id : int) -> void:
-	get_node("/root/Game/Tank_"+str(id)).queue_free()
+	get_node("/root/Game/Player_"+str(id)+"/Tank").queue_free()
 
 remotesync func createBullet(id:int) -> void:
 	var bullet = preload("res://Scenes/Bullet_Tank.tscn").instance()
-	bullet.position = get_node("/root/Game/Player/Tank_"+str(id)).getPositionShootNode().global_position
-	bullet.rotation_degrees = get_node("/root/Game/Player/Tank_"+str(id)).getTurretNode().global_rotation_degrees
+	bullet.position = get_node("/root/Game/Player_"+str(id)+"/Tank").getPositionShootNode().global_position
+	bullet.rotation_degrees = get_node("/root/Game/Player_"+str(id)+"/Tank").getTurretNode().global_rotation_degrees
 	get_parent().add_child(bullet)
 
 func shoot():
