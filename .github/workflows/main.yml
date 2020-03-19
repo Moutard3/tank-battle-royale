@@ -1,0 +1,68 @@
+name: CICD
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+  # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2.0.0
+      - name: Build HTML5
+        uses: josephbmanley/build-godot-action@v1.3.3
+        with:
+          # Name of the exported binary
+          name: TankBattleRoyal
+          # Name of the preset in `export_presets.cfg` to use
+          preset: HTML5
+          # Set true to output an artifact zip file
+          package: true
+          # Location of Godot project in repository
+          projectDir: "Tank Battle Royal"
+          # Whether or not to use `--export-debug`
+          debugMode: false
+          subdirectory: html5
+      - name: Build Windows
+        uses: josephbmanley/build-godot-action@v1.3.3
+        with:
+          # Name of the exported binary
+          name: TankBattleRoyal
+          # Name of the preset in `export_presets.cfg` to use
+          preset: "Windows Desktop"
+          # Set true to output an artifact zip file
+          package: true
+          # Location of Godot project in repository
+          projectDir: "Tank Battle Royal"
+          # Whether or not to use `--export-debug`
+          debugMode: false
+          subdirectory: windows
+      - name: Build Linux
+        uses: josephbmanley/build-godot-action@v1.3.3
+        with:
+          # Name of the exported binary
+          name: TankBattleRoyal
+          # Name of the preset in `export_presets.cfg` to use
+          preset: "Linux/X11"
+          # Set true to output an artifact zip file
+          package: true
+          # Location of Godot project in repository
+          projectDir: "Tank Battle Royal"
+          # Whether or not to use `--export-debug`
+          debugMode: false
+          subdirectory: linux
+      - name: GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v1.3.0
+        with:
+          # Create incremental commit instead of doing push force
+          keep_history: true
+          build_dir: build/html5
+        env:
+          GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
