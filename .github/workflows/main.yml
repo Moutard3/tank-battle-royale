@@ -30,34 +30,34 @@ jobs:
           # Whether or not to use `--export-debug`
           debugMode: false
           subdirectory: html5
-      - name: Build Windows
-        uses: josephbmanley/build-godot-action@v1.3.3
-        with:
-          # Name of the exported binary
-          name: TankBattleRoyal
-          # Name of the preset in `export_presets.cfg` to use
-          preset: "Windows Desktop"
-          # Set true to output an artifact zip file
-          package: true
-          # Location of Godot project in repository
-          projectDir: TankBattleRoyal
-          # Whether or not to use `--export-debug`
-          debugMode: false
-          subdirectory: windows
-      - name: Build Linux
-        uses: josephbmanley/build-godot-action@v1.3.3
-        with:
-          # Name of the exported binary
-          name: TankBattleRoyal
-          # Name of the preset in `export_presets.cfg` to use
-          preset: "Linux/X11"
-          # Set true to output an artifact zip file
-          package: true
-          # Location of Godot project in repository
-          projectDir: TankBattleRoyal
-          # Whether or not to use `--export-debug`
-          debugMode: false
-          subdirectory: linux
+      #- name: Build Windows
+      #  uses: josephbmanley/build-godot-action@v1.3.3
+      #  with:
+      #    # Name of the exported binary
+      #    name: TankBattleRoyal
+      #    # Name of the preset in `export_presets.cfg` to use
+      #    preset: "Windows Desktop"
+      #    # Set true to output an artifact zip file
+      #    package: true
+      #    # Location of Godot project in repository
+      #    projectDir: TankBattleRoyal
+      #    # Whether or not to use `--export-debug`
+      #    debugMode: false
+      #    subdirectory: windows
+      #- name: Build Linux
+      #  uses: josephbmanley/build-godot-action@v1.3.3
+      #  with:
+      #    # Name of the exported binary
+      #    name: TankBattleRoyal
+      #    # Name of the preset in `export_presets.cfg` to use
+      #    preset: "Linux/X11"
+      #    # Set true to output an artifact zip file
+      #    package: true
+      #    # Location of Godot project in repository
+      #    projectDir: TankBattleRoyal
+      #    # Whether or not to use `--export-debug`
+      #    debugMode: false
+      #    subdirectory: linux
       - name: GitHub Pages
         uses: crazy-max/ghaction-github-pages@v1.3.0
         with:
